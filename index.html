@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html data-size="">
+<head>
+    <meta charset="UTF-8">
+    <title>数据兔(数据库备份/还原工具)</title>
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+</head>
+<body>
+	<div class="header" id="navHeader">
+		<span class="dict_icon_logo" id="logo"></span>
+		<span class="dict_title">数据兔</span>
+		<span class="dict_version">V1.0</span>
+		<div class="dict_opt_btns">
+      <a id="cpp_refresh" class="app_icon dict_icon_refresh" title="刷新" href="#">刷新</a>
+			<a id="cpp_min" class="app_icon dict_icon_min" title="最小化窗口" href="#">min</a>
+      <a id="cpp_close" class="app_icon dict_icon_close" href="#">&times;</a>
+		</div>
+	</div>
+	<div class="mainsection" id="mainSection">
+		<div class="step_con">
+			<p class='bg_line'></p>
+			<ul class="stepUL">
+				<li id="firstStep" class="on"><span>1</span><i>选择操作</i></li>
+				<li id="secondStep"><span>2</span><i>数据库信息</i></li>
+				<li id="thirdStep"><span>3</span><i>操作结果</i></li>
+			</ul>
+		</div>
+		<!-- step 1 输入数据库信息 -->
+		<div id="firstStepContainer" class="stepContainer">
+			<div class="form-vertical">
+				<span>数据库类型：</span>
+				<div class="select">
+				  <select id="databaseType">
+					<option value="oracle">Oracle</option>
+					<!--<option value="sqlserver">SQL Server</option>
+					<option value="db2">DB2</option>-->
+					<option value="mysql">MySQL</option>
+				  </select>
+				</div>
+			</div>
+			<div class="form-vertical">
+				<span>操作：</span>
+				<div class="select">
+					<select id="option">
+						<option value="backup">备份</option>
+						<option value="restore">还原</option>
+					</select>
+				</div>
+			</div>
+			<div class="center mgt20">
+				<a id="firstStepBtn" class="nextbtn">下一步</a>
+			</div>
+		</div>
+		<iframe class="stepFrame hd" frameborder="no" id="loadTypeContainer"></iframe>
+	</div>
+	<div id="loadingcontent" class="mask hd">
+	</div>
+	<div id="loading" class="loading hd">
+		<div class="loading_icon"><i></i><i></i><i></i><i></i><i></i></div>
+		<div class="loading_txt"><mark id="loading_text"></mark></div>
+	</div>
+	<script type="text/javascript" src="resources/js/jquery.min.js"></script>
+	<script type="text/javascript" src="resources/js/index.js"></script>
+</body>
+</html>

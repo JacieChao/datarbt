@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Oracle Page</title>
+    <link rel="stylesheet" type="text/css" href="../resources/css/style.css">
+</head>
+<body>
+    <div id="secondStepContainer" class="stepContainer">
+        <span class="errorMsg hd" id="errorMsg">
+        </span>
+        <div class="form-line">
+            <span class="labelCol require">用户名(dba权限)：</span>
+            <input class="textCol" id="userName" type="text">
+            <span class="labelCol require">密码：</span>
+            <input class="textCol" id="password" type="password">
+        </div>
+        <div class="form-line">
+            <span class="labelCol require">数据库地址：</span>
+            <input class="textCol" id="dbUrl" type="text">
+            <span id="versionLabel" class="labelCol">目标数据库版本：</span>
+            <input class="textCol" id="version" type="text">
+        </div>
+        <div class="form-line">
+            <span class="labelCol require">端口：</span>
+            <input class="textCol" id="dbPort" type="text" value="1521">
+            <span class="labelCol require">实例名：</span>
+            <input class="textCol" id="netName" type="text" value="orcl">
+        </div>
+        <div id="backupContent" class="hd">
+            <div class="form-line">
+                <span class="labelCol">目标用户：</span>
+                <input class="textCol" id="targetUser" type="text">
+                <span class="labelCol require">导出文件名：</span>
+                <input class="textCol" id="expFileName" type="text">
+                <span>.dmp</span>
+            </div>
+            <div class="form-line">
+                <span class="labelCol require">选择路径：</span>
+                <input type="text" class="filetext" disabled id="selectPathTxt" value><a class="selectfilebtn">请选择</a>
+                <input class="filetexthidden" id="exportPath" type="file" nwdirectory>
+            </div>
+        </div>
+        <div id="restoreContent" class="hd">
+            <div class="form-line">
+                <span class="labelCol require">选择文件：</span>
+                <input type="text" class="filetext" id="selectFileTxt" disabled value><a class="selectfilebtn">请选择</a>
+                <input class="filetexthidden" id="importFile" type="file">
+            </div>
+        </div>
+        <div class="center mgt20p">
+            <a id="returnFirstBtn" class="nextbtn mgr20p">上一步</a>
+            <a id="secondStepBtn" class="nextbtn">下一步</a>
+        </div>
+    </div>
+    <div id="thirdStepContainer" class="stepContainer hd">
+        <div class="form-line">
+            <span class="labelCol">源表空间：</span>
+            <input class="textCol" id="sourceTBspace" type="text">
+            <span class="labelCol">目标空间：</span>
+            <div class="select" style="width:20%;">
+                <select id="newTBspace">
+                </select>
+            </div>
+        </div>
+        <div class="form-line">
+            <span class="labelCol">源用户：</span>
+            <input class="textCol" id="sourceUser" type="text">
+            <span class="labelCol">目标用户：</span>
+            <input class="textCol" id="newUser" type="text">
+        </div>
+        <div class="center mgt20p">
+            <a id="returnSecondBtn" class="nextbtn mgr20p">上一步</a>
+            <a id="beginRestoreBtn" class="nextbtn">下一步</a>
+        </div>
+    </div>
+    <div id="fourthStepContainer" class="stepContainer hd">
+        <div id="importProgress" class="progress_content hd">
+            <div class="im_ex_progress">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+            <mark class="loading_text" id="loadingprogress">导入中...</mark>
+        </div>
+        <div id="resultContent" class="resultcontent hd"></div>
+    </div>
+    <script type="text/javascript" src="../resources/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../resources/js/common.js"></script>
+    <!--<script type="text/javascript" src="resources/js/index.js"></script>-->
+    <script type="text/javascript" src="../resources/js/core/oracle_tools.js"></script>
+</body>
+</html>
